@@ -2,9 +2,14 @@ import React from "react";
 import "./Pokemon.css";
 
 const Pokemon = (props) => {
-  const { name, imgUrl, type, xp } = props.pokemon;
+  const { id, name, imgUrl, type, xp } = props.pokemon;
+  const { selectPokemonHandler, userChoice } = props;
+
+  const isSelected = userChoice.some((el) => el.id === id);
   return (
-    <div className="Pokemon">
+    <div
+      className={isSelected ? "Pokemon selected" : "Pokemon"}
+      onClick={() => selectPokemonHandler(id)}>
       <h4 className="Pokemon-title">{name}</h4>
       <img src={imgUrl} alt={name + " pokemon"} className="Pokemon-img" />
       <p className="Pokemon-info">Type: {type}</p>

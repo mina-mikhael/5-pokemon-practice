@@ -42,6 +42,11 @@
   transition: 0.4s ease-in-out;
 }
 
-.Pokemon .selected {
-  background-color: aqua;
+.selected {
+  background: radial-gradient(
+    farthest-corner at 40px 40px,
+    rgba(106, 195, 254, 0.93) 0%,
+    rgba(246, 246, 246, 0.995) 100%
+  );
+  color: black;
 }
