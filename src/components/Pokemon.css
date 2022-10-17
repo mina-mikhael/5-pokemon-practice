@@ -1,0 +1,47 @@
+.Pokemon {
+  width: 17%;
+  min-width: 12rem;
+  border: 1.5px solid brown;
+  margin: 1.5rem 1rem;
+  border-radius: 2em;
+  background: radial-gradient(
+    farthest-corner at 50px 40px,
+    rgb(46, 167, 241) 5%,
+    rgba(3, 3, 94, 0.795) 100%
+  );
+  line-height: 1;
+  transition: 0.2s all ease-out, background-color 0.3s;
+  box-shadow: 1px 1px 7px 1.5px rgb(93, 93, 93);
+  color: rgb(255, 255, 255);
+}
+.Pokemon:hover {
+  transform: scale(0.95);
+  background: radial-gradient(
+    farthest-corner at 40px 40px,
+    rgb(46, 167, 241) 100%,
+    rgba(3, 3, 94, 0.795) 0%
+  );
+}
+
+.Pokemon:active {
+  background: radial-gradient(
+    farthest-corner at 40px 40px,
+    rgba(106, 195, 254, 0.93) 0%,
+    rgba(246, 246, 246, 0.995) 100%
+  );
+  color: black;
+}
+
+.Pokemon:hover .Pokemon-img {
+  transform: scale(1.15);
+  filter: drop-shadow(5px 5px 20px rgba(36, 9, 0, 0.856));
+}
+
+.Pokemon-img {
+  width: 80%;
+  transition: 0.4s ease-in-out;
+}
+
+.Pokemon .selected {
+  background-color: aqua;
+}
