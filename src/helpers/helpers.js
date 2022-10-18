@@ -11,6 +11,7 @@ export const aiSelector = (array) => {
 
   return aiChoice;
 };
+
 const userChoice = [];
 
 export const userSelector = (array, pokeID) => {
