@@ -1,14 +1,14 @@
 export const aiSelector = (array) => {
   const aiChoice = [];
-
+  let randomChoice;
   const randomIdx = (array) => {
     return Math.floor(Math.random() * array.length);
   };
 
   while (aiChoice.length < 4) {
-    aiChoice.push(array[randomIdx(array)]);
+    randomChoice = array[randomIdx(array)];
+    if (!aiChoice.includes(randomChoice)) aiChoice.push(randomChoice);
   }
-
   return aiChoice;
 };
 
