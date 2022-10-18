@@ -14,13 +14,13 @@ body {
 
 button {
   font-size: 1.5rem;
-  padding: 0.7rem 1.2rem;
+  padding: 0.8rem 1.2rem;
   border-radius: 0.8em;
-  margin: 1rem;
+  margin: 1rem 3rem;
   margin-top: 2rem;
   position: sticky;
   top: 10px;
-  z-index: 2;
+  z-index: 5;
 }
 
 button:not(:disabled) {
@@ -35,10 +35,10 @@ button:not(:disabled) {
 button:disabled {
   background: radial-gradient(
     farthest-corner at 40px 40px,
-    rgba(255, 232, 80, 0.678) 0%,
-    rgba(24, 24, 221, 0.216) 100%
+    rgba(226, 226, 226, 0.678) 0%,
+    rgba(135, 135, 135, 0.9) 100%
   );
-  color: rgb(63, 63, 63);
+  color: rgb(0, 0, 0);
 }
 
 button:hover:not(:disabled) {

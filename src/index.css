@@ -128,6 +128,10 @@ table {
   border-spacing: 0;
 }
 
+/* END OF CSS RESET */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap");
+/* END FONT FAMILY IMPORTS */
+
 * {
   font-size: 62.5%;
 }
@@ -143,7 +147,25 @@ h3 {
 h4 {
   font-size: 1.3rem;
   font-weight: 500;
-  font-variant-caps: small-caps;
+}
+p,
+h1,
+h2,
+h3,
+h4::first-letter {
+  text-transform: capitalize;
+}
+p,
+h2,
+h3,
+h4 {
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-family: "Fredoka One", cursive;
+  filter: drop-shadow(2px 2px 3px white);
+  padding-top: 1rem;
 }
 
 p {

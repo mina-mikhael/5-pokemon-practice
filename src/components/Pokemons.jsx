@@ -23,12 +23,16 @@ const Pokemons = ({
         type={"submit"}
         onClick={() => clickHandler()}
         disabled={userChoice.length !== 4}>
-        {userChoice.length !== 4
-          ? "Choose any four characters and click here to Play"
+        {userChoice.length === 0
+          ? "Choose any 4 characters and click here to Play"
+          : userChoice.length < 3
+          ? `Choose ${4 - userChoice.length} more cards`
+          : userChoice.length < 4
+          ? "Choose 1 more card"
           : "Play"}
       </button>
       {userChoice.length ? (
-        <button type={"submit"} onClick={() => resetHandler()}>
+        <button className="reset" type={"submit"} onClick={() => resetHandler()}>
           Reset
         </button>
       ) : (

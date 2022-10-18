@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card";
 import { scoreCalc } from "../helpers/helpers";
 import "./Game.css";
+import winner from "../assets/winner.mp3";
 
 const Game = ({ aiChoice, userChoice, resetGame }) => {
   const clickHandler = () => {
@@ -12,11 +13,11 @@ const Game = ({ aiChoice, userChoice, resetGame }) => {
 
   return (
     <div className="Game">
-      <button className="Game-reset-btn" type="submit" onClick={() => clickHandler()}>
+      <button type="submit" onClick={() => clickHandler()}>
         Play Again
       </button>
       <div className="Game-winner">
-        <h3>
+        <h3 id={userScore > computerScore ? "win" : computerScore > userScore ? "lose" : null}>
           {userScore === computerScore
             ? "it's a tie"
             : userScore > computerScore
@@ -24,20 +25,32 @@ const Game = ({ aiChoice, userChoice, resetGame }) => {
             : "You Lose, Better Luck next time"}
         </h3>
       </div>
-      <h3>Your Cards</h3>
-      <h4>You Scored: {userScore}</h4>
-      <div className="Game-user card-container">
-        {userChoice.map((el) => {
-          return <Card key={el.id} pokemon={el} />;
-        })}
+      <div className="all-cards">
+        <div className="result-cards">
+          <h3>Your Cards</h3>
+          <h4>Score: {userScore}</h4>
+          <div className="Game-user cards-container">
+            {userChoice.map((el) => {
+              return <Card key={el.id} pokemon={el} />;
+            })}
+          </div>
+        </div>
+        <div className="result-cards">
+          <h3>Computer Cards</h3>
+          <h4>Score: {computerScore}</h4>
+          <div className="Game-computer cards-container">
+            {aiChoice.map((el) => {
+              return <Card key={el.id} pokemon={el} />;
+            })}
+          </div>
+        </div>
       </div>
-      <h3>Computer Cards</h3>
-      <h4>Computer Scored: {computerScore}</h4>
-      <div className="Game-computer card-container">
-        {aiChoice.map((el) => {
-          return <Card key={el.id} pokemon={el} />;
-        })}
-      </div>
+      {computerScore < userScore && (
+        <>
+          <img src="https://i.gifer.com/6SSp.gif" id="celebration" alt="winner gif" />
+          <audio src={winner} autoPlay={true}></audio>
+        </>
+      )}
     </div>
   );
 };
