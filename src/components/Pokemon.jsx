@@ -2,7 +2,7 @@ import React from "react";
 import "./Pokemon.css";
 
 const Pokemon = (props) => {
-  const { id, name, imgUrl, type, xp } = props.pokemon;
+  const { id, name, imgUrl, type } = props.pokemon;
   const { selectPokemonHandler, userChoice } = props;
 
   const isSelected = userChoice.some((el) => el.id === id);

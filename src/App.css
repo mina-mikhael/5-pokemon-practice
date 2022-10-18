@@ -11,3 +11,44 @@ body {
 #root {
   background-color: rgba(255, 255, 255, 0.2);
 }
+
+button {
+  font-size: 1.5rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.8em;
+  margin: 1rem;
+  margin-top: 2rem;
+  position: sticky;
+  top: 10px;
+  z-index: 2;
+}
+
+button:not(:disabled) {
+  background: radial-gradient(
+    farthest-corner at 40px 40px,
+    rgba(80, 232, 255, 0.832) 0%,
+    rgba(24, 24, 221, 0.83) 100%
+  );
+  color: white;
+  padding: 0.5rem 2rem;
+}
+button:disabled {
+  background: radial-gradient(
+    farthest-corner at 40px 40px,
+    rgba(255, 232, 80, 0.678) 0%,
+    rgba(24, 24, 221, 0.216) 100%
+  );
+  color: rgb(63, 63, 63);
+}
+
+button:hover:not(:disabled) {
+  box-shadow: 1px 1px 10px 3px white;
+  transform: scaleX(1.065);
+  cursor: pointer;
+  background: radial-gradient(
+    farthest-corner at 40px 40px,
+    rgba(255, 255, 255) 0%,
+    rgba(98, 223, 251, 0.83) 100%
+  );
+  color: black;
+}

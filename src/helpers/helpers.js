@@ -34,3 +34,9 @@ export const userSelector = (array, pokeID, userSelection) => {
   }
   return userSelection;
 };
+
+export const scoreCalc = (array) => {
+  return array.reduce((acc, curr) => {
+    return acc + curr.xp;
+  }, 0);
+};

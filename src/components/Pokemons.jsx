@@ -8,22 +8,33 @@ const Pokemons = ({
   userChoice,
   gameClickHandler,
   isGameOn,
+  resetGame,
 }) => {
   const clickHandler = () => {
     gameClickHandler();
   };
+  const resetHandler = () => {
+    resetGame();
+  };
 
   return (
     <div className="Pokemons">
-      <div className="Pokemons-game">
-        <h2 className="Pokemons-title">select any four characters and submit to Play</h2>
-        <button
-          type={"submit"}
-          onClick={() => clickHandler()}
-          disabled={userChoice.length !== 4}>
-          Submit
+      <button
+        type={"submit"}
+        onClick={() => clickHandler()}
+        disabled={userChoice.length !== 4}>
+        {userChoice.length !== 4
+          ? "Choose any four characters and click here to Play"
+          : "Play"}
+      </button>
+      {userChoice.length ? (
+        <button type={"submit"} onClick={() => resetHandler()}>
+          Reset
         </button>
-      </div>
+      ) : (
+        <></>
+      )}
+
       <div className="Pokemons-list">
         {pokemons.map((pokemon) => (
           <Pokemon

@@ -13,6 +13,7 @@
   transition: 0.2s all ease-out, background-color 0.3s;
   box-shadow: 1px 1px 7px 1.5px rgb(93, 93, 93);
   color: rgb(255, 255, 255);
+  z-index: 0;
 }
 .Pokemon:hover {
   transform: scale(0.95);
@@ -21,6 +22,7 @@
     rgb(46, 167, 241) 100%,
     rgba(3, 3, 94, 0.795) 0%
   );
+  cursor: pointer;
 }
 
 .Pokemon:active {
@@ -50,6 +52,7 @@
     rgba(246, 246, 246, 0.995) 100%
   );
   color: black;
+  box-shadow: 1px 1px 7px 3px rgb(255, 255, 255);
 }
 
 .selected:hover {

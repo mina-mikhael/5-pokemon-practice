@@ -1,0 +1,23 @@
+.Game-winner {
+  display: flex;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.Game-winner h3 {
+  border: 2px solid rgb(16, 142, 253);
+  width: auto;
+  padding: 1rem 1rem;
+  background: radial-gradient(
+    farthest-corner at 40px 40px,
+    rgba(80, 232, 255, 0.832) 0%,
+    rgba(24, 24, 221, 0.83) 100%
+  );
+  color: white;
+  border-radius: 1em;
+  font-size: 1.8rem;
+  box-shadow: 2px 2px 10px 5px white;
+}

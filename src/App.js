@@ -44,6 +44,7 @@ function App() {
             userChoice={state.userChoice}
             gameClickHandler={gameClickHandler}
             isGameOn={state.isGameOn}
+            resetGame={resetGame}
           />
         </>
       ) : (
