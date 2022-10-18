@@ -12,9 +12,7 @@ export const aiSelector = (array) => {
   return aiChoice;
 };
 
-const userChoice = [];
-
-export const userSelector = (array, pokeID) => {
+export const userSelector = (array, pokeID, userSelection) => {
   const getIdx = (arr, id) => {
     let currentIdx;
     arr.forEach((el, idx) => {
@@ -25,14 +23,14 @@ export const userSelector = (array, pokeID) => {
     return currentIdx;
   };
 
-  if (userChoice.length && userChoice.some((el) => el.id === pokeID)) {
-    userChoice.splice(getIdx(userChoice, pokeID), 1);
-    return userChoice;
+  if (userSelection.length && userSelection.some((el) => el.id === pokeID)) {
+    userSelection.splice(getIdx(userSelection, pokeID), 1);
+    return userSelection;
   }
 
-  if (userChoice.length < 4) {
+  if (userSelection.length < 4) {
     let currentIdx = getIdx(array, pokeID);
-    userChoice.push(array[currentIdx]);
+    userSelection.push(array[currentIdx]);
   }
-  return userChoice;
+  return userSelection;
 };

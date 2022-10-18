@@ -13,11 +13,13 @@ const initialState = {
   userChoice: [],
 };
 
+let userSelection = [];
+
 function App() {
   const [state, setState] = useState(initialState);
 
   const selectPokemonHandler = (id) => {
-    const currentSelection = userSelector(state.pokemons, id);
+    const currentSelection = userSelector(state.pokemons, id, userSelection);
     setState({ ...state, userChoice: currentSelection });
   };
 
@@ -28,19 +30,22 @@ function App() {
 
   const resetGame = () => {
     setState(initialState);
+    userSelection = [];
   };
 
   return (
     <div className="App">
-      <h1>welcome to Pokedex game</h1>
       {!state.isGameOn ? (
-        <Pokemons
-          pokemons={state.pokemons}
-          selectPokemonHandler={selectPokemonHandler}
-          userChoice={state.userChoice}
-          gameClickHandler={gameClickHandler}
-          isGameOn={state.isGameOn}
-        />
+        <>
+          <h1>welcome to Pokedex game</h1>
+          <Pokemons
+            pokemons={state.pokemons}
+            selectPokemonHandler={selectPokemonHandler}
+            userChoice={state.userChoice}
+            gameClickHandler={gameClickHandler}
+            isGameOn={state.isGameOn}
+          />
+        </>
       ) : (
         <Game aiChoice={state.aiChoice} userChoice={state.userChoice} resetGame={resetGame} />
       )}

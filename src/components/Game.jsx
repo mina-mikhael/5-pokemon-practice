@@ -10,14 +10,16 @@ const Game = ({ aiChoice, userChoice, resetGame }) => {
       <button className="Game-reset-btn" type="submit" onClick={() => clickHandler()}>
         Play Again
       </button>
-      <h3>You Selected</h3>
+      <div className="Game-winner">win Message</div>
+      <h3>Your Cards</h3>
+      <h4>Score:</h4>
       <div className="Game-user card-container">
         {userChoice.map((el) => {
           return <Card key={el.id} pokemon={el} />;
         })}
       </div>
-      <div className="Game-winner">win Message</div>
-      <h3>Computer Selected</h3>
+      <h3>Computer Cards</h3>
+      <h4>Score:</h4>
       <div className="Game-computer card-container">
         {aiChoice.map((el) => {
           return <Card key={el.id} pokemon={el} />;

@@ -16,7 +16,7 @@ const Pokemons = ({
   return (
     <div className="Pokemons">
       <div className="Pokemons-game">
-        <h2 className="Pokemons-title">select any four characters and submit your choice</h2>
+        <h2 className="Pokemons-title">select any four characters and submit to Play</h2>
         <button
           type={"submit"}
           onClick={() => clickHandler()}
