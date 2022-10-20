@@ -9,3 +9,11 @@
 .Pokemons-game {
   height: 2rem;
 }
+
+/*  ---- media queries ----- */
+/* medium devices */
+@media screen and (max-width: 1024px) {
+  .Pokemons-list {
+    margin: 0 0.5rem;
+  }
+}

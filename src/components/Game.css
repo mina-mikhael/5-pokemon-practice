@@ -17,7 +17,7 @@
     rgba(24, 24, 221, 0.83) 100%
   );
   color: rgb(255, 255, 255);
-  border-radius: 1em;
+  border-radius: 0.5em;
   font-size: 1.8rem;
   box-shadow: 2px 2px 10px 5px white;
 }
@@ -92,4 +92,47 @@ h4 {
   width: 100%;
   height: 100%;
   /* opacity: 20%; */
+}
+
+/*  ---- media queries ----- */
+/* medium devices */
+@media screen and (max-width: 1150px) {
+  .all-cards {
+    flex-flow: column wrap;
+  }
+  .result-cards {
+    width: auto;
+    max-width: 97%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .Game-winner h3 {
+    font-size: 1.2rem;
+  }
+
+  .all-cards {
+    flex-flow: column wrap;
+  }
+
+  .result-cards {
+    max-width: 95%;
+    width: auto;
+    min-width: auto;
+    margin: 1rem 1rem;
+    border-radius: 1em;
+    border: 1px solid rgb(234, 234, 255);
+    padding: 1rem;
+    background-color: rgba(232, 232, 232, 0.7);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* small devices */
+@media screen and (max-width: 480px) {
+  .Game-winner h3 {
+    font-size: 1rem;
+  }
 }

@@ -35,6 +35,7 @@ function App() {
 
   return (
     <div className="App">
+      <div className="background"></div>
       {!state.isGameOn ? (
         <>
           <h1>welcome to Pokedex game</h1>

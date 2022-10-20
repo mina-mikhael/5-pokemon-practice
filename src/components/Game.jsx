@@ -13,6 +13,12 @@ const Game = ({ aiChoice, userChoice, resetGame }) => {
 
   return (
     <div className="Game">
+      {computerScore < userScore && (
+        <>
+          <img src="https://i.gifer.com/6SSp.gif" id="celebration" alt="winner gif" />
+          <audio src={winner} autoPlay={true}></audio>
+        </>
+      )}
       <button type="submit" onClick={() => clickHandler()}>
         Play Again
       </button>
@@ -45,12 +51,6 @@ const Game = ({ aiChoice, userChoice, resetGame }) => {
           </div>
         </div>
       </div>
-      {computerScore < userScore && (
-        <>
-          <img src="https://i.gifer.com/6SSp.gif" id="celebration" alt="winner gif" />
-          <audio src={winner} autoPlay={true}></audio>
-        </>
-      )}
     </div>
   );
 };

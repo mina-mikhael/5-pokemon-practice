@@ -1,8 +1,8 @@
 .Pokemon {
-  width: 17%;
+  width: 16%;
   min-width: 12rem;
-  border: 1.5px solid brown;
-  margin: 1.5rem 1rem;
+  border: 1.5px solid rgb(0, 31, 93);
+  margin: 1.5rem 0.5rem;
   border-radius: 2em;
   background: radial-gradient(
     farthest-corner at 50px 40px,
@@ -68,5 +68,26 @@
 }
 
 .Pokemon * {
-  padding: 0.3rem 0;
+  padding: 0.4rem 0;
+}
+
+/*  ---- media queries ----- */
+/* medium devices */
+@media screen and (max-width: 1024px) {
+  .Pokemon {
+    width: 15%;
+    min-width: 7rem;
+    margin: 0.5rem 0.5rem;
+    padding: 0;
+  }
+
+  .Pokemon .Pokemon-img {
+    width: 80%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* small devices */
+@media screen and (max-width: 480px) {
 }
